@@ -39,9 +39,11 @@
             </tr>
         </thead>
         <tbody>
-            {% for account in accounts %}
+            {% for account_data in account_data_list %}
                 <tr>
-                    <td>{{ account.id }}</td>
+                    <td>{{ account_data.tag }}</td>
+                    <td>{{ account_data.name }}</td>
+                    <td>{{ account_data.townHall }}</td>
                 </tr>
             {% endfor %}
         </tbody>

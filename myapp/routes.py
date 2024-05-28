@@ -1,6 +1,7 @@
 from . import app
 from flask import request, render_template, flash, redirect, url_for, session
 import mysql.connector
+from myapp import coc_api
 
 def get_db_connection():
     connection = mysql.connector.connect(
@@ -98,12 +99,19 @@ def view_accounts():
 
     connection = get_db_connection()
     cursor = connection.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM accounts WHERE username = %s", (username,))
+    cursor.execute("SELECT id FROM accounts WHERE username = %s", (username,))
     accounts = cursor.fetchall()
     cursor.close()
     connection.close()
 
-    return render_template('view_accounts.html', accounts=accounts)
+    # Fetch additional data from the API for each account
+    account_data_list = []
+    for account in accounts:
+        account_data = coc_api.PlayerInfo(coc_api.get_user(account['id']))
+        #account_data = coc_api.get_user(account['id'])
+        account_data_list.append(account_data)
+
+    return render_template('view_accounts.html', accounts=accounts, account_data_list=account_data_list)
 
 @app.route('/dashboard/add', methods=['GET', 'POST'])
 def add_account():
