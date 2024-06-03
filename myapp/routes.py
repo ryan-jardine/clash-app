@@ -14,6 +14,8 @@ def get_db_connection():
 
 @app.route('/')
 def main():
+    if 'username' in session:
+        return render_template('loggedin_home.html')
     return render_template('home.html')
 
 @app.route('/logout')
