@@ -17,6 +17,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
+                {% if user_logged_in %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                {% endif %}
             </ul>
             <ul class="navbar-nav ms-auto"> <!-- Use ms-auto to push "Login" and "Register" to the right -->
                 <li class="nav-item">
@@ -33,6 +38,50 @@
 <div class="container mt-4">
     <div class="mt-4 p-5 bg-primary text-white rounded">
         <h1>HomePage</h1>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <h2>Latest News</h2>
+            <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">News Title 1</h5>
+                                <p class="card-text">Brief description of the news item. This can include some recent updates or important information.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">News Title 2</h5>
+                                <p class="card-text">Another piece of news or update to keep users informed about recent events.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more carousel items as needed -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h2>Important Info</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Info Item 1</li>
+                <li class="list-group-item">Info Item 2</li>
+                <li class="list-group-item">Info Item 3</li>
+                <!-- Add more info items as needed -->
+            </ul>
+        </div>
     </div>
 </div>
 
