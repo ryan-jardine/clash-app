@@ -14,6 +14,10 @@ def get_user(id):
 
 user = get_user('Y9PUGGCL')
 
+def get_gp():
+    response = requests.get('https://api.clashofclans.com/v1/goldpass/seasons/current', headers=headers)
+    gp_json = response.json()
+    return gp_json
 
 # Store Relevant user information in an Object
 class PlayerInfo:
@@ -26,7 +30,14 @@ class PlayerInfo:
         self.bestTrophies = user_json['bestTrophies']
         self.warStars = user_json['warStars']
 
+class GameInfo:
+    def __init__(self, gp_json):
+        self.gpStart = gp_json['startTime']
+        self.gpEnd = gp_json['endTime']
 
+
+gameInfo = GameInfo(get_gp())
+print(gameInfo.gpStart)
 
 player = PlayerInfo(user)
 print(player.name)

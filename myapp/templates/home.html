@@ -43,43 +43,24 @@
     <div class="row mt-4">
         <div class="col-md-8">
             <h2>Latest News</h2>
-            <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">News Title 1</h5>
-                                <p class="card-text">Brief description of the news item. This can include some recent updates or important information.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">News Title 2</h5>
-                                <p class="card-text">Another piece of news or update to keep users informed about recent events.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more carousel items as needed -->
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+            <ul class="list-group">
+                {% for news in news_list %}
+                    <li class="list-group-item">
+                        <h5>This Month's Gold Pass details</h5>
+                        <p>Start Time: {{ news.gpStart }}</p>
+                        <p>End Time: {{ news.gpEnd }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
         <div class="col-md-4">
             <h2>Important Info</h2>
             <ul class="list-group">
-                <li class="list-group-item">Info Item 1</li>
-                <li class="list-group-item">Info Item 2</li>
-                <li class="list-group-item">Info Item 3</li>
-                <!-- Add more info items as needed -->
+                {% for item in info %}
+                    <li class="list-group-item">
+                        {{ item }}
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
