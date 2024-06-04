@@ -36,6 +36,7 @@ class GameInfo:
         self.gpEnd = gp_json['endTime']
 
 
+
 gameInfo = GameInfo(get_gp())
 print(gameInfo.gpStart)
 

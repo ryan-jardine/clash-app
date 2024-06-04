@@ -16,20 +16,20 @@ def get_db_connection():
 @app.route('/')
 def main():
 
-    news_list = []
+    news_data = []
 
-    # Clean up the retrieved data...
+    # For Gold Pass data
     news_data = coc_api.GameInfo(coc_api.get_gp())
     news_data.gpStart = news_data.gpStart[:8]
     news_data.gpEnd = news_data.gpEnd[:8]
     news_data.gpStart = str(datetime.datetime(int(news_data.gpStart[:4]), int(news_data.gpStart[4:6]), int(news_data.gpStart[6:8])))[:10]
     news_data.gpEnd = str(datetime.datetime(int(news_data.gpEnd[:4]), int(news_data.gpEnd[4:6]), int(news_data.gpEnd[6:8])))[:10]
-    news_list.append(news_data)
+    news = news_data
 
     info = ["Info Item 1", "Info Item 2", "Info Item 3"]
 
     user_logged_in = 'username' in session
-    return render_template('home.html', user_logged_in = user_logged_in, news_list = news_list, info = info)
+    return render_template('home.html', user_logged_in = user_logged_in, news= news, info = info)
 
 @app.route('/logout')
 def logout():
