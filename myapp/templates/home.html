@@ -2,8 +2,58 @@
 <html lang="en">
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .wizard-tower {
+            background-color: #f8d7da;
+        }
+        .eagle-artillery {
+            background-color: #d1ecf1;
+        }
+        .inferno-tower-multi {
+            background-color: #d4edda;
+        }
+        .inferno-tower-single {
+            background-color: #fff3cd;
+        }
+        .archer-tower {
+            background-color: #cce5ff;
+        }
+        .x-bow {
+            background-color: #e2e3e5;
+        }
+        .th12-weapon, .th13-weapon, .th14-weapon, .th12-death-damage, .th13-death-damage, .th14-death-damage {
+            background-color: #f5c6cb;
+        }
+        .cannon {
+            background-color: #bee5eb;
+        }
+        .root-rider {
+            background-color: #c3e6cb;
+        }
+        .bowler{
+            background-color: rebeccapurple;
+        }
+        .witch{
+            background-color: salmon;
+        }
+        .valkyrie{
+            background-color: darkslateblue;
+        }
+        .hog-rider{
+            background-color: goldenrod;
+        }
+        .golem{
+            background-color: lightseagreen;
+        }
+
+    </style>
 </head>
-</head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -53,212 +103,216 @@
                     </div>
                     <img src="{{ url_for('static', filename='images/gp.jpeg') }}" alt="Game Progress" class="img-fluid ms-3" style="max-width: 150px;">
                 </li>
-                <li class="list-group-item d-flex align-items-center">
-                    <div class="flex-grow-1">
+                <li class="list-group-item d-flex align-items-center" style="background-color: khaki" >
+                    <div class="flex-grow-1" >
                         <h5>June Balance Changes!</h5>
                         <div class="container mt-5">
                         <div class="section">
-        <h2>Wizard Tower</h2>
-        <div class="entry">Level 9, TH 10, Old HP 1680, New HP 1600</div>
-        <div class="entry">Level 10, TH 11, Old HP 2000, New HP 1900</div>
-        <div class="entry">Level 11, TH 12, Old HP 2240, New HP 2120</div>
-        <div class="entry">Level 12, TH 13, Old HP 2480, New HP 2240</div>
-        <div class="entry">Level 13, TH 13, Old HP 2700, New HP 2500</div>
-        <div class="entry">Level 14, TH 14, Old HP 2900, New HP 2800</div>
-        <div class="entry">Level 15, TH 15, Old HP 3000, New HP 3000</div>
+                            <p>In today's maintenance, we are implementing a list of Balance Changes where we are buffing and nerfing many Defenses and Troops, ranging from Town Hall 10 to Town Hall 16!</p>
+
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Game Updates</h1>
+<h3>Changes on defence!</h3>
+        <div class="section wizard-tower">
+            <h2>Wizard Tower</h2>
+            <div class="entry">Level 9, TH 10, Old HP 1680, New HP 1600</div>
+            <div class="entry">Level 10, TH 11, Old HP 2000, New HP 1900</div>
+            <div class="entry">Level 11, TH 12, Old HP 2240, New HP 2120</div>
+            <div class="entry">Level 12, TH 13, Old HP 2480, New HP 2240</div>
+            <div class="entry">Level 13, TH 13, Old HP 2700, New HP 2500</div>
+            <div class="entry">Level 14, TH 14, Old HP 2900, New HP 2800</div>
+            <div class="entry">Level 15, TH 15, Old HP 3000, New HP 3000</div>
+        </div>
+
+        <div class="section eagle-artillery">
+            <h2>Eagle Artillery</h2>
+            <div class="entry">Level 1, TH 11, Old DPH 275, New DPH 225</div>
+            <div class="entry">Level 2, TH 11, Old DPH 325, New DPH 250</div>
+            <div class="entry">Level 3, TH 12, Old DPH 375, New DPH 275</div>
+            <div class="entry">Level 4, TH 13, Old DPH 425, New DPH 350</div>
+            <div class="entry">Level 5, TH 14, Old DPH 475, New DPH 425</div>
+            <div class="entry">Level 6, TH 15, Old DPH 500, New DPH 475</div>
+        </div>
+
+        <div class="section inferno-tower-multi">
+            <h2>Inferno Tower Multi</h2>
+            <div class="entry">Level 4, TH 11, Old DPS 50, New DPS 45</div>
+            <div class="entry">Level 5, TH 11, Old DPS 60, New DPS 50</div>
+            <div class="entry">Level 6, TH 12, Old DPS 70, New DPS 55</div>
+            <div class="entry">Level 7, TH 13, Old DPS 85, New DPS 65</div>
+            <div class="entry">Level 8, TH 14, Old DPS 100, New DPS 80</div>
+            <div class="entry">Level 9, TH 15, Old DPS 110, New DPS 100</div>
+        </div>
+
+        <div class="section inferno-tower-single">
+            <h2>Inferno Tower Single</h2>
+            <div class="entry">Level 5, TH 11, Old DPS 60-1600, New DPS 50-1500</div>
+            <div class="entry">Level 6, TH 12, Old DPS 70-1800, New DPS 55-1600</div>
+            <div class="entry">Level 7, TH 13, Old DPS 85-2000, New DPS 65-1800</div>
+            <div class="entry">Level 8, TH 14, Old DPS 100-2200, New DPS 80-2100</div>
+            <div class="entry">Level 9, TH 15, Old DPS 110-2400, New DPS 100-2300</div>
+        </div>
+
+        <div class="section archer-tower">
+            <h2>Archer Tower</h2>
+            <div class="entry">Level 12, TH 10, Old DPS 75, New DPS 74</div>
+            <div class="entry">Level 13, TH 10, Old DPS 80, New DPS 78</div>
+            <div class="entry">Level 14, TH 11, Old DPS 90, New DPS 82</div>
+            <div class="entry">Level 15, TH 11, Old DPS 100, New DPS 85</div>
+            <div class="entry">Level 16, TH 12, Old DPS 105, New DPS 90</div>
+            <div class="entry">Level 17, TH 12, Old DPS 110, New DPS 100</div>
+            <div class="entry">Level 18, TH 13, Old DPS 120, New DPS 110</div>
+            <div class="entry">Level 19, TH 13, Old DPS 130, New DPS 120</div>
+            <div class="entry">Level 20, TH 14, Old DPS 138, New DPS 135</div>
+            <div class="entry">Level 21, TH 15, Old DPS 145, New DPS 145</div>
+        </div>
+
+        <div class="section x-bow">
+            <h2>X-Bow</h2>
+            <div class="entry">Level 4, TH 10, Old DPS 90, New DPS 85</div>
+            <div class="entry">Level 5, TH 11, Old DPS 110, New DPS 95</div>
+            <div class="entry">Level 6, TH 12, Old DPS 130, New DPS 110</div>
+            <div class="entry">Level 7, TH 13, Old DPS 150, New DPS 130</div>
+            <div class="entry">Level 8, TH 13, Old DPS 170, New DPS 155</div>
+            <div class="entry">Level 9, TH 14, Old DPS 190, New DPS 185</div>
+        </div>
+
+        <div class="section th12-weapon">
+            <h2>TH12 Weapon</h2>
+            <div class="entry">Level 1, TH 12, Old DPS 120, New DPS 100</div>
+            <div class="entry">Level 2, TH 12, Old DPS 140, New DPS 120</div>
+            <div class="entry">Level 3, TH 12, Old DPS 140, New DPS 120</div>
+            <div class="entry">Level 4, TH 12, Old DPS 160, New DPS 140</div>
+            <div class="entry">Level 5, TH 12, Old DPS 160, New DPS 140</div>
+        </div>
+
+        <div class="section th13-weapon">
+            <h2>TH13 Weapon</h2>
+            <div class="entry">Level 1, TH 13, Old DPS 160, New DPS 140</div>
+            <div class="entry">Level 2, TH 13, Old DPS 180, New DPS 160</div>
+            <div class="entry">Level 3, TH 13, Old DPS 200, New DPS 180</div>
+            <div class="entry">Level 4, TH 13, Old DPS 220, New DPS 200</div>
+            <div class="entry">Level 5, TH 13, Old DPS 240, New DPS 220</div>
+        </div>
+
+        <div class="section th14-weapon">
+            <h2>TH14 Weapon</h2>
+            <div class="entry">Level 1, TH 14, Old DPS 240, New DPS 220</div>
+            <div class="entry">Level 2, TH 14, Old DPS 250, New DPS 235</div>
+            <div class="entry">Level 3, TH 14, Old DPS 260, New DPS 250</div>
+            <div class="entry">Level 4, TH 14, Old DPS 270, New DPS 265</div>
+        </div>
+
+        <div class="section th12-death-damage">
+            <h2>TH12 Death Damage</h2>
+            <div class="entry">Level 5, TH 12, Old DD 1000, New DD 500</div>
+        </div>
+
+        <div class="section th13-death-damage">
+            <h2>TH13 Death Damage</h2>
+            <div class="entry">Level 1, TH 13, Old DD 1000, New DD 500</div>
+            <div class="entry">Level 2, TH 13, Old DD 1000, New DD 550</div>
+            <div class="entry">Level 3, TH 13, Old DD 1000, New DD 600</div>
+            <div class="entry">Level 4, TH 13, Old DD 1000, New DD 650</div>
+            <div class="entry">Level 5, TH 13, Old DD 1000, New DD 700</div>
+        </div>
+
+        <div class="section th14-death-damage">
+            <h2>TH14 Death Damage</h2>
+            <div class="entry">Level 1, TH 14, Old DD 1000, New DD 700</div>
+            <div class="entry">Level 2, TH 14, Old DD 1000, New DD 750</div>
+            <div class="entry">Level 3, TH 14, Old DD 1000, New DD 800</div>
+            <div class="entry">Level 4, TH 14, Old DD 1000, New DD 900</div>
+        </div>
+
+        <div class="section cannon">
+            <h2>Cannon</h2>
+            <div class="entry">Level 14, TH 11, Old DPS 105, New DPS 100</div>
+            <div class="entry">Level 15, TH 11, Old DPS 115, New DPS 105</div>
+            <div class="entry">Level 16, TH 12, Old DPS 120, New DPS 110</div>
+            <div class="entry">Level 17, TH 12, Old DPS 125, New DPS 115</div>
+            <div class="entry">Level 18, TH 13, Old DPS 130, New DPS 125</div>
+            <div class="entry">Level 19, TH 13, Old DPS 140, New DPS 135</div>
+        </div>
+<h3>Changes on Offence!</h3>
+        <div class="section bowler">
+            <h2>Bowler DPS</h2>
+            <div class="entry">Level 2, TH 10, Old DPS 70, New DPS 72</div>
+            <div class="entry">Level 3, TH 11, Old DPS 80, New DPS 84</div>
+            <div class="entry">Level 4, TH 12, Old DPS 90, New DPS 96</div>
+            <div class="entry">Level 5, TH 13, Old DPS 96, New DPS 102</div>
+            <div class="entry">Level 6, TH 14, Old DPS 102, New DPS 108</div>
+        </div>
+
+        <div class="section bowler">
+            <h2>Bowler HP</h2>
+            <div class="entry">Level 2, TH 10, Old HP 350, New HP 375</div>
+            <div class="entry">Level 3, TH 11, Old HP 385, New HP 420</div>
+            <div class="entry">Level 4, TH 12, Old HP 420, New HP 470</div>
+            <div class="entry">Level 5, TH 13, Old HP 455, New HP 505</div>
+            <div class="entry">Level 6, TH 14, Old HP 500, New HP 530</div>
+            <div class="entry">Level 7, TH 15, Old HP 550, New HP 565</div>
+        </div>
+
+        <div class="section witch">
+            <h2>Witch DPS</h2>
+            <div class="entry">Level 4, TH 11, Old DPS 160, New DPS 165</div>
+            <div class="entry">Level 5, TH 12, Old DPS 180, New DPS 185</div>
+        </div>
+
+        <div class="section witch">
+            <h2>Witch HP</h2>
+            <div class="entry">Level 4, TH 11, Old HP 440, New HP 470</div>
+            <div class="entry">Level 5, TH 12, Old HP 480, New HP 520</div>
+            <div class="entry">Level 6, TH 15, Old HP 520, New HP 540</div>
+        </div>
+
+        <div class="section root-rider">
+            <h2>Root Rider DPS</h2>
+            <div class="entry">Level 1, TH 15, Old DPS 190, New DPS 95</div>
+            <div class="entry">Level 2, TH 15, Old DPS 210, New DPS 105</div>
+            <div class="entry">Level 3, TH 16, Old DPS 230, New DPS 115</div>
+        </div>
+
+        <div class="section root-rider">
+            <h2>Root Rider HP</h2>
+            <div class="entry">Level 1, TH 15, Old HP 6300, New HP 6200</div>
+            <div class="entry">Level 2, TH 15, Old HP 6650, New HP 6350</div>
+            <div class="entry">Level 3, TH 16, Old HP 7000, New HP 6500</div>
+        </div>
+
+        <div class="section hog-rider">
+            <h2>Hog Rider DPS</h2>
+            <div class="entry">Level 7, TH 11, Old DPS 135, New DPS 140</div>
+            <div class="entry">Level 8, TH 12, Old DPS 148, New DPS 155</div>
+            <div class="entry">Level 9, TH 12, Old DPS 161, New DPS 165</div>
+            <div class="entry">Level 10, TH 13, Old DPS 174, New DPS 176</div>
+        </div>
+
+        <div class="section valkyrie">
+            <h2>Valkyrie DPS</h2>
+            <div class="entry">Level 6, TH 11, Old DPS 163, New DPS 167</div>
+            <div class="entry">Level 7, TH 12, Old DPS 178, New DPS 185</div>
+            <div class="entry">Level 8, TH 13, Old DPS 193, New DPS 196</div>
+        </div>
+
+        <div class="section golem">
+            <h2>Golem HP</h2>
+            <div class="entry">Level 6, TH 11, Old HP 6600, New HP 6600</div>
+            <div class="entry">Level 7, TH 11, Old HP 6900, New HP 7000</div>
+            <div class="entry">Level 8, TH 12, Old HP 7200, New HP 7500</div>
+            <div class="entry">Level 9, TH 12, Old HP 7500, New HP 7900</div>
+            <div class="entry">Level 10, TH 13, Old HP 8000, New HP 8200</div>
+            <div class="entry">Level 11, TH 14, Old HP 8400, New HP 8500</div>
+        </div>
     </div>
-
-    <div class="section">
-        <h2>Eagle Artillery</h2>
-        <div class="entry">Level 1, TH 11, Old DPH 275, New DPH 225</div>
-        <div class="entry">Level 2, TH 11, Old DPH 325, New DPH 250</div>
-        <div class="entry">Level 3, TH 12, Old DPH 375, New DPH 275</div>
-        <div class="entry">Level 4, TH 13, Old DPH 425, New DPH 350</div>
-        <div class="entry">Level 5, TH 14, Old DPH 475, New DPH 425</div>
-        <div class="entry">Level 6, TH 15, Old DPH 500, New DPH 475</div>
-    </div>
-
-    <div class="section">
-        <h2>Inferno Tower Multi</h2>
-        <div class="entry">Level 4, TH 11, Old DPS 50, New DPS 45</div>
-        <div class="entry">Level 5, TH 11, Old DPS 60, New DPS 50</div>
-        <div class="entry">Level 6, TH 12, Old DPS 70, New DPS 55</div>
-        <div class="entry">Level 7, TH 13, Old DPS 85, New DPS 65</div>
-        <div class="entry">Level 8, TH 14, Old DPS 100, New DPS 80</div>
-        <div class="entry">Level 9, TH 15, Old DPS 110, New DPS 100</div>
-    </div>
-
-    <div class="section">
-        <h2>Inferno Tower Single</h2>
-        <div class="entry">Level 5, TH 11, Old DPS 60-1600, New DPS 50-1500</div>
-        <div class="entry">Level 6, TH 12, Old DPS 70-1800, New DPS 55-1600</div>
-        <div class="entry">Level 7, TH 13, Old DPS 85-2000, New DPS 65-1800</div>
-        <div class="entry">Level 8, TH 14, Old DPS 100-2200, New DPS 80-2100</div>
-        <div class="entry">Level 9, TH 15, Old DPS 110-2400, New DPS 100-2300</div>
-    </div>
-
-    <div class="section">
-        <h2>Archer Tower</h2>
-        <div class="entry">Level 12, TH 10, Old DPS 75, New DPS 74</div>
-        <div class="entry">Level 13, TH 10, Old DPS 80, New DPS 78</div>
-        <div class="entry">Level 14, TH 11, Old DPS 90, New DPS 82</div>
-        <div class="entry">Level 15, TH 11, Old DPS 100, New DPS 85</div>
-        <div class="entry">Level 16, TH 12, Old DPS 105, New DPS 90</div>
-        <div class="entry">Level 17, TH 12, Old DPS 110, New DPS 100</div>
-        <div class="entry">Level 18, TH 13, Old DPS 120, New DPS 110</div>
-        <div class="entry">Level 19, TH 13, Old DPS 130, New DPS 120</div>
-        <div class="entry">Level 20, TH 14, Old DPS 138, New DPS 135</div>
-        <div class="entry">Level 21, TH 15, Old DPS 145, New DPS 145</div>
-    </div>
-
-    <div class="section">
-        <h2>X-Bow</h2>
-        <div class="entry">Level 4, TH 10, Old DPS 90, New DPS 85</div>
-        <div class="entry">Level 5, TH 11, Old DPS 110, New DPS 95</div>
-        <div class="entry">Level 6, TH 12, Old DPS 130, New DPS 110</div>
-        <div class="entry">Level 7, TH 13, Old DPS 150, New DPS 130</div>
-        <div class="entry">Level 8, TH 13, Old DPS 170, New DPS 155</div>
-        <div class="entry">Level 9, TH 14, Old DPS 190, New DPS 185</div>
-    </div>
-
-    <div class="section">
-        <h2>TH12 Weapon</h2>
-        <div class="entry">Level 1, TH 12, Old DPS 120, New DPS 100</div>
-        <div class="entry">Level 2, TH 12, Old DPS 140, New DPS 120</div>
-        <div class="entry">Level 3, TH 12, Old DPS 140, New DPS 120</div>
-        <div class="entry">Level 4, TH 12, Old DPS 160, New DPS 140</div>
-        <div class="entry">Level 5, TH 12, Old DPS 160, New DPS 140</div>
-    </div>
-
-    <div class="section">
-        <h2>TH13 Weapon</h2>
-        <div class="entry">Level 1, TH 13, Old DPS 160, New DPS 140</div>
-        <div class="entry">Level 2, TH 13, Old DPS 180, New DPS 160</div>
-        <div class="entry">Level 3, TH 13, Old DPS 200, New DPS 180</div>
-        <div class="entry">Level 4, TH 13, Old DPS 220, New DPS 200</div>
-        <div class="entry">Level 5, TH 13, Old DPS 240, New DPS 220</div>
-    </div>
-
-    <div class="section">
-        <h2>TH14 Weapon</h2>
-        <div class="entry">Level 1, TH 14, Old DPS 240, New DPS 220</div>
-        <div class="entry">Level 2, TH 14, Old DPS 250, New DPS 235</div>
-        <div class="entry">Level 3, TH 14, Old DPS 260, New DPS 250</div>
-        <div class="entry">Level 4, TH 14, Old DPS 270, New DPS 265</div>
-    </div>
-
-    <div class="section">
-        <h2>TH12 Death Damage</h2>
-        <div class="entry">Level 5, TH 12, Old DD 1000, New DD 500</div>
-    </div>
-
-    <div class="section">
-        <h2>TH13 Death Damage</h2>
-        <div class="entry">Level 1, TH 13, Old DD 1000, New DD 500</div>
-        <div class="entry">Level 2, TH 13, Old DD 1000, New DD 550</div>
-        <div class="entry">Level 3, TH 13, Old DD 1000, New DD 600</div>
-        <div class="entry">Level 4, TH 13, Old DD 1000, New DD 650</div>
-        <div class="entry">Level 5, TH 13, Old DD 1000, New DD 700</div>
-    </div>
-
-    <div class="section">
-        <h2>TH14 Death Damage</h2>
-        <div class="entry">Level 1, TH 14, Old DD 1000, New DD 700</div>
-        <div class="entry">Level 2, TH 14, Old DD 1000, New DD 750</div>
-        <div class="entry">Level 3, TH 14, Old DD 1000, New DD 800</div>
-        <div class="entry">Level 4, TH 14, Old DD 1000, New DD 900</div>
-    </div>
-
-    <div class="section">
-        <h2>Cannon</h2>
-        <div class="entry">Level 14, TH 11, Old DPS 105, New DPS 100</div>
-        <div class="entry">Level 15, TH 11, Old DPS 115, New DPS 105</div>
-        <div class="entry">Level 16, TH 12, Old DPS 120, New DPS 110</div>
-        <div class="entry">Level 17, TH 12, Old DPS 125, New DPS 115</div>
-        <div class="entry">Level 18, TH 13, Old DPS 130, New DPS 125</div>
-        <div class="entry">Level 19, TH 13, Old DPS 140, New DPS 135</div>
-    </div>
-
-    <div class="section">
-        <h2>Hog Rider</h2>
-        <div class="entry">Level 7, TH 11, Old DPS 135, New DPS 140</div>
-        <div class="entry">Level 8, TH 12, Old DPS 148, New DPS 155</div>
-        <div class="entry">Level 9, TH 12, Old DPS 161, New DPS 165</div>
-        <div class="entry">Level 10, TH 13, Old DPS 174, New DPS 176</div>
-    </div>
-
-    <div class="section">
-        <h2>Bowler</h2>
-        <div class="entry">Level 2, TH 10, Old DPS 70, New DPS 72</div>
-        <div class="entry">Level 3, TH 11, Old DPS 80, New DPS 84</div>
-        <div class="entry">Level 4, TH 12, Old DPS 90, New DPS 96</div>
-        <div class="entry">Level 5, TH 13, Old DPS 96, New DPS 102</div>
-        <div class="entry">Level 6, TH 14, Old DPS 102, New DPS 108</div>
-    </div>
-
-    <div class="section">
-        <h2>Valkyrie</h2>
-        <div class="entry">Level 6, TH 11, Old DPS 163, New DPS 167</div>
-        <div class="entry">Level 7, TH 12, Old DPS 178, New DPS 185</div>
-        <div class="entry">Level 8, TH 13, Old DPS 193, New DPS 196</div>
-    </div>
-
-    <div class="section">
-        <h2>Witch</h2>
-        <div class="entry">Level 4, TH 11, Old DPS 160, New DPS 165</div>
-        <div class="entry">Level 5, TH 12, Old DPS 180, New DPS 185</div>
-    </div>
-
-    <div class="section">
-        <h2>Root Rider</h2>
-        <div class="entry">Level 1, TH 15, Old DPS 190, New DPS 95</div>
-        <div class="entry">Level 2, TH 15, Old DPS 210, New DPS 105</div>
-        <div class="entry">Level 3, TH 16, Old DPS 230, New DPS 115</div>
-    </div>
-
-    <div class="section">
-        <h2>Bowler HP</h2>
-        <div class="entry">Level 2, TH 10, Old HP 350, New HP 375</div>
-        <div class="entry">Level 3, TH 11, Old HP 385, New HP 420</div>
-        <div class="entry">Level 4, TH 12, Old HP 420, New HP 470</div>
-        <div class="entry">Level 5, TH 13, Old HP 455, New HP 505</div>
-        <div class="entry">Level 6, TH 14, Old HP 500, New HP 530</div>
-        <div class="entry">Level 7, TH 15, Old HP 550, New HP 565</div>
-    </div>
-
-    <div class="section">
-        <h2>Golem</h2>
-        <div class="entry">Level 6, TH 11, Old HP 6600, New HP 6600</div>
-        <div class="entry">Level 7, TH 11, Old HP 6900, New HP 7000</div>
-        <div class="entry">Level 8, TH 12, Old HP 7200, New HP 7500</div>
-        <div class="entry">Level 9, TH 12, Old HP 7500, New HP 7900</div>
-        <div class="entry">Level 10, TH 13, Old HP 8000, New HP 8200</div>
-        <div class="entry">Level 11, TH 14, Old HP 8400, New HP 8500</div>
-    </div>
-
-    <div class="section">
-        <h2>Witch HP</h2>
-        <div class="entry">Level 4, TH 11, Old HP 440, New HP 470</div>
-        <div class="entry">Level 5, TH 12, Old HP 480, New HP 520</div>
-        <div class="entry">Level 6, TH 15, Old HP 520, New HP 540</div>
-    </div>
-
-    <div class="section">
-        <h2>Root Rider HP</h2>
-        <div class="entry">Level 1, TH 15, Old HP 6300, New HP 6200</div>
-        <div class="entry">Level 2, TH 15, Old HP 6650, New HP 6350</div>
-        <div class="entry">Level 3, TH 16, Old HP 7000, New HP 6500</div>
-    </div>
-
-
-<p>We hope you enjoy these changes! If you'd like to share your feedback and opinions, make sure to follow us on our official social media pages on X and Facebook and leave a comment on our posts!</p>
-
-                        </div>
 
 
 
                     </div>
-                    <img src="{{ url_for('static', filename='images/gp.jpeg') }}" alt="Game Progress" class="img-fluid ms-3" style="max-width: 150px;">
+                        </div>
+                    </div>
                 </li>
 
             </ul>
