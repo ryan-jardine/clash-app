@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
     <style>
         .section {
             margin-bottom: 20px;
@@ -52,9 +53,10 @@
         }
 
     </style>
+    <title>Latest Clash of Clans News!</title>
 </head>
 
-<body>
+<body style="background-color: #cce5ff">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -85,17 +87,18 @@
     </div>
 </nav>
 
-<div class="container mt-4">
-    <div class="mt-4 p-5 bg-primary text-white rounded">
-        <h1>HomePage</h1>
-    </div>
+<div class="container mt-4" >
 
     <div class="row mt-4">
         <div class="row mt-4">
-        <div class="col-md-12">
+        <div class="col-md-12" >
             <ul class="list-group">
-                <h3>Latest News in Clash of Clans</h3>
-                <li class="list-group-item d-flex align-items-center">
+
+                <li class="list-group-item d-flex align-items-center" style="background-color: aqua">
+                    <h3>Latest News in Clash of Clans</h3>
+                </li>
+
+                <li class="list-group-item d-flex align-items-center" style="background-color: darksalmon">
                     <div class="flex-grow-1">
                         <h5>This Month's Gold Pass details</h5>
                         <p>This season, The Wild West, spans from {{ news.gpStart }} to {{ news.gpEnd }}.
@@ -103,17 +106,21 @@
                     </div>
                     <img src="{{ url_for('static', filename='images/gp.jpeg') }}" alt="Game Progress" class="img-fluid ms-3" style="max-width: 150px;">
                 </li>
+
                 <li class="list-group-item d-flex align-items-center" style="background-color: khaki" >
                     <div class="flex-grow-1" >
+
                         <h5>June Balance Changes!</h5>
+
                         <div class="container mt-5">
                         <div class="section">
                             <p>In today's maintenance, we are implementing a list of Balance Changes where we are buffing and nerfing many Defenses and Troops, ranging from Town Hall 10 to Town Hall 16!</p>
 
-
     <div class="container mt-5">
         <h1 class="mb-4">Game Updates</h1>
+
 <h3>Changes on defence!</h3>
+
         <div class="section wizard-tower">
             <h2>Wizard Tower</h2>
             <div class="entry">Level 9, TH 10, Old HP 1680, New HP 1600</div>
@@ -235,7 +242,9 @@
             <div class="entry">Level 18, TH 13, Old DPS 130, New DPS 125</div>
             <div class="entry">Level 19, TH 13, Old DPS 140, New DPS 135</div>
         </div>
+
 <h3>Changes on Offence!</h3>
+
         <div class="section bowler">
             <h2>Bowler DPS</h2>
             <div class="entry">Level 2, TH 10, Old DPS 70, New DPS 72</div>
@@ -307,27 +316,13 @@
             <div class="entry">Level 11, TH 14, Old HP 8400, New HP 8500</div>
         </div>
     </div>
-
-
-
                     </div>
                         </div>
                     </div>
                 </li>
-
             </ul>
         </div>
     </div>
-        <div class="col-md-4">
-            <h2>Important Info</h2>
-            <ul class="list-group">
-                {% for item in info %}
-                    <li class="list-group-item">
-                        {{ item }}
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
     </div>
 </div>
 
