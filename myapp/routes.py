@@ -99,7 +99,8 @@ def register():
 def dashboard():
     if 'username' in session:
         username = session['username']
-        return render_template('dashboard.html', username=username)
+        user_logged_in = 'username' in session
+        return render_template('dashboard.html', username=username, user_logged_in = user_logged_in)
     else:
         flash('You are not logged in')
         return redirect(url_for('login'))
@@ -123,10 +124,10 @@ def view_accounts():
     account_data_list = []
     for account in accounts:
         account_data = coc_api.PlayerInfo(coc_api.get_user(account['id']))
-        #account_data = coc_api.get_user(account['id'])
         account_data_list.append(account_data)
 
-    return render_template('view_accounts.html', accounts=accounts, account_data_list=account_data_list)
+    user_logged_in = 'username' in session
+    return render_template('view_accounts.html', accounts=accounts, account_data_list=account_data_list, user_logged_in = user_logged_in)
 
 @app.route('/dashboard/add', methods=['GET', 'POST'])
 def add_account():
@@ -149,7 +150,8 @@ def add_account():
         flash('Account added successfully')
         return redirect(url_for('dashboard'))
     else:
-        return render_template('add_account.html')
+        user_logged_in = 'username' in session
+        return render_template('add_account.html', user_logged_in = user_logged_in)
 
 @app.route('/dashboard/view_accounts/account_details', methods=['GET'])
 def view_account():
@@ -159,5 +161,5 @@ def view_account():
 
     if request.method == 'GET':
         tag = request.args.get('id')
-        print(tag)
-        return render_template('account_details.html', id=tag)
+        user_logged_in = 'username' in session
+        return render_template('account_details.html', id=tag, user_logged_in = user_logged_in)
