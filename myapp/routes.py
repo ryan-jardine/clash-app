@@ -150,3 +150,14 @@ def add_account():
         return redirect(url_for('dashboard'))
     else:
         return render_template('add_account.html')
+
+@app.route('/dashboard/view_accounts/account_details', methods=['GET'])
+def view_account():
+    if 'username' not in session:
+        flash('You need to be logged in to add a user')
+        return redirect(url_for('login'))
+
+    if request.method == 'GET':
+        tag = request.args.get('id')
+        print(tag)
+        return render_template('account_details.html', id=tag)

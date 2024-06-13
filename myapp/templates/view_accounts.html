@@ -35,7 +35,7 @@
             <tr>
                 <th>Account ID</th>
                 <th>Account Name</th>
-                <th>Account Details</th>
+                <th>Town Hall Level</th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +44,7 @@
                     <td>{{ account_data.tag }}</td>
                     <td>{{ account_data.name }}</td>
                     <td>{{ account_data.townHall }}</td>
+                    <th> <a href="/dashboard/view_accounts/account_details?id={{ account_data.tag | urlencode}}">View Account</a></th>
                 </tr>
             {% endfor %}
         </tbody>
