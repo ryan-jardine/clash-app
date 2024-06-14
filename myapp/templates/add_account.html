@@ -22,10 +22,7 @@
                 </li>
                 {% if user_logged_in %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dashboard/view_accounts">My Accounts</a>
+                        <a class="nav-link" href="/view_accounts">My Accounts</a>
                     </li>
                 {% endif %}
             </ul>
@@ -48,15 +45,18 @@
     </div>
 </nav>
 
-<div class="container mt-5">
-    <h2>Add Account</h2>
-    <form action="/dashboard/add" method="post">
-        <div class="form-group">
-            <label for="id">Account ID:</label>
-            <input type="text" name="id" class="form-control" placeholder="Enter Account ID" required>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">Add Account</button>
-    </form>
+<div class="container mt-5 align-content-center d-flex" style="background-color: #f5f5f5; min-height: 250px; border: none; border-radius: 10px; margin-top: 10px;">
+    <div class="container mt-5">
+        <h2>Add Account</h2>
+        <form action="/add" method="post">
+            <div class="form-group">
+                <label for="id">Account ID:</label>
+                <input type="text" name="id" class="form-control" placeholder="Enter Account ID" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Add Account</button>
+        </form>
+    </div>
 </div>
+
 </body>
 </html>

@@ -15,9 +15,7 @@ def get_db_connection():
 
 @app.route('/')
 def main():
-
     news_data = []
-
     # For Gold Pass data
     news_data = coc_api.GameInfo(coc_api.get_gp())
     news_data.gpStart = news_data.gpStart[:8]
@@ -55,7 +53,7 @@ def login():
         if user and user['password'] == password:
             session['username'] = username
             flash('Login Success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('view_accounts'))
         else:
             # Login failed
             flash('Invalid username or password')
@@ -95,17 +93,8 @@ def register():
     else:
         return render_template('register.html')
 
-@app.route('/dashboard')
-def dashboard():
-    if 'username' in session:
-        username = session['username']
-        user_logged_in = 'username' in session
-        return render_template('dashboard.html', username=username, user_logged_in = user_logged_in)
-    else:
-        flash('You are not logged in')
-        return redirect(url_for('login'))
 
-@app.route('/dashboard/view_accounts')
+@app.route('/view_accounts')
 def view_accounts():
     if 'username' not in session:
         flash('You need to be logged in to view accounts')
@@ -129,7 +118,7 @@ def view_accounts():
     user_logged_in = 'username' in session
     return render_template('view_accounts.html', accounts=accounts, account_data_list=account_data_list, user_logged_in = user_logged_in)
 
-@app.route('/dashboard/add', methods=['GET', 'POST'])
+@app.route('/add', methods=['GET', 'POST'])
 def add_account():
     if 'username' not in session:
         flash('You need to be logged in to add a user')
@@ -148,12 +137,12 @@ def add_account():
         connection.close()
 
         flash('Account added successfully')
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('view_accounts'))
     else:
         user_logged_in = 'username' in session
         return render_template('add_account.html', user_logged_in = user_logged_in)
 
-@app.route('/dashboard/view_accounts/account_details', methods=['GET'])
+@app.route('/view_accounts/account_details', methods=['GET'])
 def view_account():
     if 'username' not in session:
         flash('You need to be logged in to add a user')

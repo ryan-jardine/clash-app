@@ -19,11 +19,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                {% if user_logged_in %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Dashboard</a>
-                    </li>
-                {% endif %}
             </ul>
             <ul class="navbar-nav ms-auto"> <!-- Use ms-auto to push "Login" and "Register" to the right -->
                 {% if user_logged_in == false %}
