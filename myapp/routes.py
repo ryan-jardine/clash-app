@@ -161,5 +161,6 @@ def view_account():
 
     if request.method == 'GET':
         tag = request.args.get('id')
+        info = coc_api.PlayerInfo(coc_api.get_user(tag[1:]))
         user_logged_in = 'username' in session
-        return render_template('account_details.html', id=tag, user_logged_in = user_logged_in)
+        return render_template('account_details.html', id=tag, user_logged_in=user_logged_in, info=info)

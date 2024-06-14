@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Details</title>
+
+    <style>
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f5f5f5 ;
+        }
+    </style>
+
 </head>
 <body style="background-color: #cce5ff">
 
@@ -44,7 +54,26 @@
     </div>
 </nav>
 
-<p>hi</p>
-<p>{{ id }}</p>
+{% set th_image = "images/townhalls/th" ~ info.townHall ~ ".png" %}
+
+<div class="container mt-4 section">
+    <div class="row">
+        <div class="col-12 mb-3 d-flex justify-content-center">
+            <h1>Account Details for {{ info.name }}</h1>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="{{ url_for('static', filename=th_image) }}" alt="Account Town Hall Image" class="img-fluid" style="border-radius: 10px;">
+        </div>
+        <div class="col-12 col-md-8">
+            <div class="mt-4 d-flex justify-content-center">
+                <p>Additional content or description text goes here.</p>
+                <!-- Add more content as needed -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 </body>
 </html>
