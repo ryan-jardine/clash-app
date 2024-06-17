@@ -128,6 +128,10 @@ def add_account():
         username = session['username']
         account = request.form['id']
 
+        # check if the account exists
+        response = (coc_api.get_user(account))
+        if response == "User does not exist":
+            return redirect(url_for('add_account'))
 
         connection = get_db_connection()
         cursor = connection.cursor()
